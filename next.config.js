@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  basePath: "/nextjs-pages",
-  assetPrefix: "/nextjs-pages",
+  basePath: "/jasper-resume",
+  assetPrefix: "/jasper-resume",
 }
 
 module.exports = nextConfig
