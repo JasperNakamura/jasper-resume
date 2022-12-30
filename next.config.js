@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   basePath: "/nextjs-pages",
-  assetPrefix: "/nextjs-pages",
+  assetPrefix: isProduction ? '/{jasper-resume}' : '',
 }
 
 module.exports = nextConfig
