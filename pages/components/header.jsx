@@ -1,30 +1,34 @@
-import { AppBar, Toolbar, Typography } from "@mui/material";
-import { createTheme } from '@mui/material/styles';
-import WebhookIcon from '@mui/icons-material/Webhook';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
-const theme = createTheme({
-    palette: {
-        primary: {
-            main: '#e0ae40',
-        },
-        secondary: {
-            main: '#fff',
-        },
-    },
-});
-
-const header = () => {
+const Header = () => {
   return (
-    <div style={{flexGrow: '1'}}>
-      <AppBar theme={theme} position='static' color='primary' elevation={0}>
-        <Toolbar>
-          <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%'}}>
-            <WebhookIcon theme={theme} color='secondary'/>
-          </div>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <Navbar bg="dark" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home" className='text-white'>Jasper Nakamura</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
-};
+}
 
-export default header;
+export default Header;
